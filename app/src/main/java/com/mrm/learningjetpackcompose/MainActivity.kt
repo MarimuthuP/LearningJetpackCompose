@@ -21,7 +21,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //Greeting("Android")
                     //Home()
-                    TextSample()
+                    //TextSample()
+                    ClickableText()
                 }
             }
         }
