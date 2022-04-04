@@ -22,7 +22,8 @@ class MainActivity : ComponentActivity() {
                     //Greeting("Android")
                     //Home()
                     //TextSample()
-                    ClickableText()
+                    //ClickableText()
+                    BookDetails()
                 }
             }
         }
