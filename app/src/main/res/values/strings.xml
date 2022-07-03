@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">LearningJetpackCompose</string>
+
+    <string name="tv_simple_text">Simple Text Example</string>
+    <string name="tv_custom_text">Custom Text Example</string>
+    <string name="tv_text_input_example">Text Input component</string>
+    <string name="tv_button">Buttons Example</string>
+    <string name="tv_radio_button">Radio button example</string>
+    <string name="tv_checkbox">Checkbox button example</string>
+    <string name="tv_vertical_scrollable">Vertical scrollable list</string>
+    <string name="tv_horizontal_scrollable">Horizontal scrollable list</string>
+    <string name="tv_load_image_example">Loading Images</string>
+    <string name="tv_clickable_component">Clickable component</string>
+    <string name="tv_recyclerview_example">Recyclerview Example</string>
+    <string name="title_activity_simple_text">SimpleTextActivity</string>
+    <string name="title_activity_custom_styled_text">CustomStyledTextActivity</string>
+    <string name="title_activity_image">ImageActivity</string>
+
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
 </resources>

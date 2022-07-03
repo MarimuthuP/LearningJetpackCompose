@@ -35,18 +35,18 @@ fun SimpleMessage(name: String) {
     verticalArrangement = Arrangement.Center,
     horizontalAlignment = Alignment.CenterHorizontally,
     content = {
-        simpleTextview(name = name)
-        customStyledText(displayText = "At the right moment")
+        SimpleTextview(name = name)
+        CustomStyledText1(displayText = "This is sample custom style text")
     })
 }
 
 @Composable
-fun simpleTextview(name: String){
+fun SimpleTextview(name: String){
     Text(text = name)
 }
 
 @Composable
-fun customStyledText(displayText: String, style: TextStyle? = null, maxLines: Int? = null){
+private fun CustomStyledText1(displayText: String, style: TextStyle? = null, maxLines: Int? = null){
     Text(
         text = displayText,
         modifier = Modifier.padding(16.dp),
@@ -58,7 +58,7 @@ fun customStyledText(displayText: String, style: TextStyle? = null, maxLines: In
 }
 
 @Composable
-fun customStyledTextView(displayText: String){
+fun CustomStyledTextView(displayText: String){
     val shape = RoundedCornerShape(8.dp)
     val shadowElevationPx = with(LocalDensity.current){2.dp.toPx()}
     val backgroundColor = MaterialTheme.colors.primarySurface
@@ -76,14 +76,14 @@ fun customStyledTextView(displayText: String){
 
 @Preview
 @Composable
-fun previewSimpleMessage(){
+fun PreviewSimpleMessage(){
     SimpleMessage(name = "Everything will be alright!")
 }
 
 @Preview
 @Composable
-fun previewCustomStyledText(){
-    customStyledText(
+fun PreviewCustomStyledText(){
+    CustomStyledText(
         displayText = "Fantastic moment going to arrive",
         maxLines = 2,
         style = TextStyle(
@@ -98,6 +98,6 @@ fun previewCustomStyledText(){
 
 @Preview
 @Composable
-fun previewCustomStyledTextView(){
-    customStyledTextView(displayText = "You will get it soon what you are looking for")
+fun PreviewCustomStyledTextView(){
+    CustomStyledTextView(displayText = "You will get it soon what you are looking for")
 }
