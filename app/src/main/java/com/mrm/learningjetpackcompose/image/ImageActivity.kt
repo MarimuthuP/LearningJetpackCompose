@@ -4,14 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,9 +34,9 @@ class ImageActivity : ComponentActivity() {
  * used to display the cards in the column (vertical list with scrollable)
  */
 @Composable
-fun UserList(){
+fun UserList() {
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-        for (i in 1..10){
+        for (i in 1..10) {
             UserCard()
         }
     }
@@ -69,7 +67,9 @@ fun UserCard() {
                     .align(Alignment.CenterVertically)
                     .size(70.dp)
                     .clip(CircleShape)
+                    .border(1.5.dp, MaterialTheme.colors.secondaryVariant, CircleShape)
             )
+            Spacer(modifier = Modifier.width(4.dp))
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -81,6 +81,7 @@ fun UserCard() {
                         .fillMaxWidth()
                         .padding(5.dp)
                 )
+                Spacer(modifier = Modifier.height(5.dp))
                 Button(onClick = {
                     //Perform some button action
                 }) {
@@ -102,3 +103,15 @@ fun DefaultPreview() {
         UserCard()
     }
 }
+
+data class User(val id: Int)
+
+val users = mutableListOf(
+    User(1),
+    User(1),
+    User(1),
+    User(1),
+    User(1),
+    User(1),
+    User(1)
+)

@@ -27,7 +27,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mrm.learningjetpackcompose.cardview.CardViewActivity
 import com.mrm.learningjetpackcompose.image.ImageActivity
+import com.mrm.learningjetpackcompose.recyclerviewdemo.RecyclerViewDemoActivity
 import com.mrm.learningjetpackcompose.text.SimpleTextActivity
 import com.mrm.learningjetpackcompose.ui.theme.LearningJetpackComposeTheme
 
@@ -60,7 +62,7 @@ fun TitleForTextView(title: String, type: CategoryType) {
 
     Text(
         text = title,
-        fontSize = 20.sp,
+        fontSize = 16.sp,
         textAlign = TextAlign.Center,
         color = Color.White,
         modifier = Modifier
@@ -84,7 +86,18 @@ fun TitleForTextView(title: String, type: CategoryType) {
                             ImageActivity::class.java
                         )
                     )
-                    CategoryType.RECYCLER_VIEW -> simpleToast(context, "RecyclerView")
+                    CategoryType.RECYCLER_VIEW -> context.startActivity(
+                        Intent(
+                            context,
+                            RecyclerViewDemoActivity::class.java
+                        )
+                    )
+                    CategoryType.CARD_VIEW_ANIMATION -> context.startActivity(
+                        Intent(
+                            context,
+                            CardViewActivity::class.java
+                        )
+                    )
                     CategoryType.BUTTONS -> simpleToast(context, "Buttons")
                 }
 
@@ -106,11 +119,12 @@ val views = listOf(
     ViewTitle("Simple TextView", CategoryType.SIMPLE_TEXT),
     ViewTitle("CardView with image and button", CategoryType.CARD_VIEW),
     ViewTitle("RecyclerView", CategoryType.RECYCLER_VIEW),
-    ViewTitle("Buttons", CategoryType.BUTTONS)
+    ViewTitle("Buttons", CategoryType.BUTTONS),
+    ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION)
 )
 
 enum class CategoryType {
-    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS
+    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION
 }
 
 fun simpleToast(context: Context, message: String) {

@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningJetpackCompose">
         <activity
+            android:name=".cardview.CardViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recyclerviewdemo.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recyclerviewdemo.RecyclerViewDemoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_recycler_view_demo"
+            android:theme="@style/Theme.LearningJetpackCompose" />
+        <activity
             android:name=".image.ImageActivity"
             android:exported="false"
             android:label="@string/title_activity_image"
