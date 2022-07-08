@@ -98,6 +98,12 @@ fun TitleForTextView(title: String, type: CategoryType) {
                             CardViewActivity::class.java
                         )
                     )
+                    CategoryType.WEB_VIEW -> context.startActivity(
+                        Intent(
+                            context,
+                            CardViewActivity::class.java
+                        )
+                    )
                     CategoryType.BUTTONS -> simpleToast(context, "Buttons")
                 }
 
@@ -120,11 +126,12 @@ val views = listOf(
     ViewTitle("CardView with image and button", CategoryType.CARD_VIEW),
     ViewTitle("RecyclerView", CategoryType.RECYCLER_VIEW),
     ViewTitle("Buttons", CategoryType.BUTTONS),
-    ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION)
+    ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION),
+    ViewTitle("Webview", CategoryType.WEB_VIEW)
 )
 
 enum class CategoryType {
-    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION
+    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW
 }
 
 fun simpleToast(context: Context, message: String) {
