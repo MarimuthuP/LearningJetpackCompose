@@ -32,6 +32,7 @@ import com.mrm.learningjetpackcompose.image.ImageActivity
 import com.mrm.learningjetpackcompose.recyclerviewdemo.RecyclerViewDemoActivity
 import com.mrm.learningjetpackcompose.text.SimpleTextActivity
 import com.mrm.learningjetpackcompose.ui.theme.LearningJetpackComposeTheme
+import com.mrm.learningjetpackcompose.webview.WebviewActivity
 
 class MainActivity : ComponentActivity() {
 
@@ -101,7 +102,7 @@ fun TitleForTextView(title: String, type: CategoryType) {
                     CategoryType.WEB_VIEW -> context.startActivity(
                         Intent(
                             context,
-                            CardViewActivity::class.java
+                            WebviewActivity::class.java
                         )
                     )
                     CategoryType.BUTTONS -> simpleToast(context, "Buttons")
