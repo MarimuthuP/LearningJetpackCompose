@@ -9,6 +9,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,6 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,9 +49,22 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ViewList() {
-    LazyColumn {
-        items(views) { view ->
-            TitleForTextView(title = view.title, type = view.type)
+
+    Column {
+        TopAppBar {
+            Text(
+                text = "Jetpack Compose Exercise",
+                style = TextStyle(
+                    color = Color.White,
+                    fontSize = MaterialTheme.typography.h6.fontSize,
+                    fontWeight = MaterialTheme.typography.h6.fontWeight,
+                )
+            )
+        }
+        LazyColumn {
+            items(views) { view ->
+                TitleForTextView(title = view.title, type = view.type)
+            }
         }
     }
 }
