@@ -122,8 +122,8 @@ fun TitleForTextView(title: String, type: CategoryType) {
                         )
                     )
                     CategoryType.BUTTONS -> simpleToast(context, "Buttons")
+                    CategoryType.BOTTOM_NAVIGATION -> simpleToast(context, "Clicked Bottom Navigation..")
                 }
-
             }
     )
 }
@@ -144,11 +144,12 @@ val views = listOf(
     ViewTitle("RecyclerView", CategoryType.RECYCLER_VIEW),
     ViewTitle("Buttons", CategoryType.BUTTONS),
     ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION),
-    ViewTitle("Webview", CategoryType.WEB_VIEW)
+    ViewTitle("Webview", CategoryType.WEB_VIEW),
+    ViewTitle("Bottom Navigation", CategoryType.BOTTOM_NAVIGATION)
 )
 
 enum class CategoryType {
-    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW
+    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW, BOTTOM_NAVIGATION
 }
 
 fun simpleToast(context: Context, message: String) {
