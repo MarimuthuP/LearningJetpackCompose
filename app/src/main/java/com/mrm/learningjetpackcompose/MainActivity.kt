@@ -136,6 +136,14 @@ fun TitleForTextView(title: String, type: CategoryType) {
                             BottomMenuAnimActivity::class.java
                         )
                     )
+                    CategoryType.DOWNLOAD_FILE_WORK_MANAGER -> simpleToast(
+                        context,
+                        "Downloading task is in progress.."
+                    )
+                    CategoryType.LIST_WITH_PAGING3 -> simpleToast(
+                        context,
+                        "Paging is not started yet."
+                    )
                 }
             }
     )
@@ -159,12 +167,14 @@ val views = listOf(
     ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION),
     ViewTitle("Webview", CategoryType.WEB_VIEW),
     ViewTitle("Bottom Navigation", CategoryType.BOTTOM_NAVIGATION),
-    ViewTitle("Bottom menu with animation", CategoryType.BOTTOM_NAV_WITH_ANIMATION)
+    ViewTitle("Bottom menu with animation", CategoryType.BOTTOM_NAV_WITH_ANIMATION),
+    ViewTitle("Download file using WorkManager", CategoryType.DOWNLOAD_FILE_WORK_MANAGER),
+    ViewTitle("List with Paging3", CategoryType.LIST_WITH_PAGING3)
 )
 
 enum class CategoryType {
     SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW,
-    BOTTOM_NAVIGATION, BOTTOM_NAV_WITH_ANIMATION
+    BOTTOM_NAVIGATION, BOTTOM_NAV_WITH_ANIMATION, LIST_WITH_PAGING3, DOWNLOAD_FILE_WORK_MANAGER
 }
 
 fun simpleToast(context: Context, message: String) {
