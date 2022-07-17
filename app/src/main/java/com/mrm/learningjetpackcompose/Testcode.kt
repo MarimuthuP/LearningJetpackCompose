@@ -1,5 +1,9 @@
 package com.mrm.learningjetpackcompose
 
+private var number: Int? = null
+
+private var i = 0
+
 fun main(args: Array<String>) {
     /*checkPalinPrimeNumbers()
     checkReverseNumber()
@@ -8,13 +12,33 @@ fun main(args: Array<String>) {
     //checkArmstrongNumber()
     //checkArmstrongNumberBetweenTwoNumbers()
     //findTotalUnclosedBrackets()
-    printNumbers()
+    //printNumbers()
 
     //region Finding output from this snippet
     /*findOutputFromThisPart1()
     findOutputFromThisPart2()*/
     //endregion
+
+    checkScopeFunctions()
 }
+
+fun checkScopeFunctions() {
+    /*if(number!=null){
+        val result = number!! + 100
+    }*/
+
+    val res = number?.let {
+        val numb2 = it + 100
+        numb2
+    } ?: 0
+
+    println("Number -> $res")
+
+    println("square - ${getSquare()}")
+}
+
+fun getSquare() = (i*i).also { i = 80 }
+
 
 private fun printNumbers() {
     toPrintAllNumbers()

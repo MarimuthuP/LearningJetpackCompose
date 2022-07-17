@@ -30,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mrm.learningjetpackcompose.bottomnavmenu.BottomNavMenuActivity
 import com.mrm.learningjetpackcompose.cardview.CardViewActivity
 import com.mrm.learningjetpackcompose.image.ImageActivity
 import com.mrm.learningjetpackcompose.recyclerviewdemo.RecyclerViewDemoActivity
@@ -122,7 +123,12 @@ fun TitleForTextView(title: String, type: CategoryType) {
                         )
                     )
                     CategoryType.BUTTONS -> simpleToast(context, "Buttons")
-                    CategoryType.BOTTOM_NAVIGATION -> simpleToast(context, "Clicked Bottom Navigation..")
+                    CategoryType.BOTTOM_NAVIGATION -> context.startActivity(
+                        Intent(
+                            context,
+                            BottomNavMenuActivity::class.java
+                        )
+                    )
                 }
             }
     )
