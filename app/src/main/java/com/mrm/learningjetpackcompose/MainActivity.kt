@@ -30,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mrm.learningjetpackcompose.bottomnavanim.BottomMenuAnimActivity
 import com.mrm.learningjetpackcompose.bottomnavmenu.BottomNavMenuActivity
 import com.mrm.learningjetpackcompose.cardview.CardViewActivity
 import com.mrm.learningjetpackcompose.image.ImageActivity
@@ -129,6 +130,12 @@ fun TitleForTextView(title: String, type: CategoryType) {
                             BottomNavMenuActivity::class.java
                         )
                     )
+                    CategoryType.BOTTOM_NAV_WITH_ANIMATION -> context.startActivity(
+                        Intent(
+                            context,
+                            BottomMenuAnimActivity::class.java
+                        )
+                    )
                 }
             }
     )
@@ -151,11 +158,13 @@ val views = listOf(
     ViewTitle("Buttons", CategoryType.BUTTONS),
     ViewTitle("CardView with animation", CategoryType.CARD_VIEW_ANIMATION),
     ViewTitle("Webview", CategoryType.WEB_VIEW),
-    ViewTitle("Bottom Navigation", CategoryType.BOTTOM_NAVIGATION)
+    ViewTitle("Bottom Navigation", CategoryType.BOTTOM_NAVIGATION),
+    ViewTitle("Bottom menu with animation", CategoryType.BOTTOM_NAV_WITH_ANIMATION)
 )
 
 enum class CategoryType {
-    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW, BOTTOM_NAVIGATION
+    SIMPLE_TEXT, CARD_VIEW, RECYCLER_VIEW, BUTTONS, CARD_VIEW_ANIMATION, WEB_VIEW,
+    BOTTOM_NAVIGATION, BOTTOM_NAV_WITH_ANIMATION
 }
 
 fun simpleToast(context: Context, message: String) {
